@@ -507,11 +507,24 @@
     </footer>
 <script>
   function searchFood() {
+    // Pega o valor digitado no campo de input com id "searchInput"
+    // Converte o texto para letras minúsculas
+    
     const input = document.getElementById("searchInput").value.toLowerCase();
+     // Seleciona todos os elementos que possuem a classe "menu-card"
+    // Isso retorna uma lista (NodeList) de todos os cards do menu
+    
     const cards = document.querySelectorAll(".menu-card");
-
+     // Percorre cada card encontrado
     cards.forEach(card => {
+
+      // Dentro de cada card, pega o texto do elemento <h2>
+      // Converte esse texto para minúsculas também
       let title = card.querySelector("h2").textContent.toLowerCase();
+
+      // Verifica se o texto digitado (input) está contido no título do card
+      // Se sim, exibe o card (display: flex)
+      // Se não, esconde o card display: none
       card.style.display = title.includes(input) ? "flex" : "none";
 
 
@@ -522,5 +535,6 @@
   </body>
 
 </html>
+
 
 
